@@ -12,6 +12,7 @@ const LESSONS = [
 ];
 const MIN_MODEL={model:'minimum',inputs:[['numbers','数字（空格分隔，1–12 个）','5 2 2 8']],code:wrap(['int n, x, best;','cin >> n;','cin >> best;','for (int i = 2; i <= n; i++) {','    cin >> x;','    if (x < best) {','        best = x;','    }','}','cout << best << \'\\n\';'])};
 function createTrace(model, input, code) {
+ if(model.startsWith('w11-'))return CPP_WEEK11.trace(model,input,code);
  if(model.startsWith('w10-'))return CPP_WEEK10.trace(model,input,code);
  if(model.startsWith('w9-'))return CPP_WEEK9.trace(model,input,code);
  if(model.startsWith('w8-'))return CPP_WEEK8.trace(model,input,code);
